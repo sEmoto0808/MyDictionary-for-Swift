@@ -1,0 +1,75 @@
+//☆Swift 3.0 ＜Optional型＞☆
+
+import UIKit
+
+// Swiftの通常の型はnilを入れることができない．
+var str:String?
+str = "Optinal"
+
+
+
+// アンラップ
+// Optional型の値を使うにはアンラップする必要がある．
+var str2:String!  // 暗黙的なOptional型
+str2 = "test2"
+let strFromOptional = str2
+
+/*
+ * ※注意
+ * 使用時に自動的にアンラップされて元の型になるが，
+ * 実行時にnilだった場合エラーになる
+ */
+
+
+
+/*
+ * Optional Binding(if let ~, guard let ~ else)
+ * 
+ * if let ~
+ * →nilでない場合，if文内で取り出した値を使うことができる
+ * guard let ~ else
+ * →nilである場合，guard文の中に入り以降の処理を行わない
+ * →nilでない場合，取り出した値をguard以降で使うことができる
+ */
+
+let str3:String?
+str3 = "test3"
+
+if let strFromOptional2 = str3 {
+    print(strFromOptional2)
+}
+
+let str4:String?
+str4 = "test3"
+
+guard let strFromOptional3 = str4 else {
+    return
+}
+
+print(strFromOptional3)
+
+// if let ~でアンラップしてから値を判定する
+if let a = b, let b = a, a == b {
+}
+
+/*
+ * Optional Chaining(?)
+ * 
+ * 変数名の後ろに「?」をつけると元の型のメソッドを使える
+ * 結果はOptional
+ * nilでも無視され，エラーにならない
+ */
+
+var str5:String?
+str5 = "test4"
+print(str5?.appending("!!") ?? String())
+
+/*
+ * Forced Unwrappong(!)
+ * オプショナル変数名の後ろに!を付けると強制的に元の型として扱える。
+ * 結果は元の型になっている。nilの場合は実行時にエラーになる。
+ */
+
+let eee: String?
+eee = nil
+print(eee!.appending("!!")) // アプリが落ちる
