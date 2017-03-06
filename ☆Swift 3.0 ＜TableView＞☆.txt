@@ -1,0 +1,48 @@
+// ☆Swift 3.0 ＜TableView＞☆
+
+// 以下TableViewで実装が必須のメソッド
+
+/*
+ * テーブルビューのセクション数を返すメソッド
+ */
+func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return foods.count;
+}
+    
+/*
+ * セクション毎のセル数を指定するメソッド
+ */
+func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return vegetables.count
+        case 1:
+            return fruits.count
+        default:
+            return 0
+        }
+}
+    
+/*
+ * セルの内容を変更するメソッド
+ */
+func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+        // Storyboardで設定したIdentifierでUITableViewCellのインスタンスを生成
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+
+        // StoryboardでCellを作成しない場合
+        // let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+
+        // セルにテキストを設定
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = vegetables[indexPath.row]
+        case 1:
+            cell.textLabel?.text = fruits[indexPath.row]
+        default:
+            break
+        }
+
+        return cell
+}
