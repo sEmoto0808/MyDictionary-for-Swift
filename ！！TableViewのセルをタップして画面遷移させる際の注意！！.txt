@@ -1,0 +1,22 @@
+！！TableViewのセルをタップして画面遷移させる際の注意！！
+
+delegate → TableViewを表示するViewController
+detaSource → TableView
+
+に設定すること．
+
+【理由】
+画面遷移するpresentメソッドはUIViewControllerを親に持つクラスにしか実装できない．
+（正確に言うとTableViewControllerやAlertControllerにも実装できる）
+そのため，TableViewのセルをタップした時に呼び出される以下の関数
+
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+
+内でpresentメソッドを実装するためには，上記の関数をTableViewを表示するViewControllerで実装しなければ
+ならない．
+
+→　上記の関数が定義されているTableViewのdelegateをTableViewを表示するViewControllerにすることで
+　解決する。
+
+→　TableViewに表示するデータは，TableViewで管理する
+→　TableViewのセルの操作に対する処理はViewControllerに実装する
