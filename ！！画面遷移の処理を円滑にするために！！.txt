@@ -1,0 +1,33 @@
+！！画面遷移の処理を円滑にするために！！
+
+＜条件＞
+以下の２つのファイルをプロジェクトに導入すること
+
+　・NSObject+ClassName.swift
+　・UIStoryBoard+Instance.swift
+
+＜実装＞
+　画面遷移先となるViewControllerに以下のメソッドを実装する．
+
+
+// ＜ViewControllerクラス＞ → 実装するViewControllerクラス
+static func create() -> ＜ViewControllerクラス＞ {
+        　　　　　　　　　
+        guard let vc = UIStoryboard.viewController(storyboardName: ＜ViewControllerクラス＞.className,
+            identifier: ＜ViewControllerクラス＞.className) as? ＜ViewControllerクラス＞ else {
+                fatalError("unwap ＜ViewControllerクラス＞")
+        }
+        return vc
+}
+
+
+　上記のメソッドでViewController自身のインスタンスを生成し，返り値として返している。
+　したがって，画面遷移元での実装は下記のようになる。
+
+// 遷移先のViewControllerクラスのインスタンスを作成
+let vc = ＜遷移先のViewControllerクラス＞.create()
+
+// 画面遷移させる
+self.present(vc, animated: true, completion: nil)
+  or
+navigationController?.pushViewController(vc, animated: true)
