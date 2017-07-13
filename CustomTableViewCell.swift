@@ -21,7 +21,14 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setImage (url: String) {
+    func setImage (imageName: String) {
+        
+        let image = UIImage(named: imageName)
+        self.imageView?.image = image
+        
+    }
+    
+    func setImageFromURL (url: String) {
         
         let url = NSURL(string: url)
         let imageData = try? Data(contentsOf: url! as URL)
