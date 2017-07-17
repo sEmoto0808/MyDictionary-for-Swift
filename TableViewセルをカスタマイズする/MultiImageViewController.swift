@@ -71,4 +71,31 @@ extension MultiImageViewController: UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    /*
+     * セルの間隔を開けたい時は１セクション１セルにしてセクションを透明にしてスペースとする
+     */
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        // セルの上部のスペース
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        // セルの下部のスペース
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        // 透明にすることでスペースとする
+        view.tintColor = UIColor.clear
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        
+        // 透明にすることでスペースとする
+        view.tintColor = UIColor.clear
+    }
+    
 }
