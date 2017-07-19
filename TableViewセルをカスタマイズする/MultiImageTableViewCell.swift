@@ -26,6 +26,15 @@ class MultiImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /*
+     // 強制アンラップを用いない方法
+     func setImage(urlString: String, imageView: UIImageView) {
+     
+     guard let url = URL(string: urlString) else { return }
+     imageView.kf.setImage(with: url)  <-- ライブラリKingfisherを使う
+     }
+     */
+    
     func setPassportImage(url: String) {
         
         let url = NSURL(string: url)
