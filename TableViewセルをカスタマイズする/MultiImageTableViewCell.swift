@@ -35,6 +35,8 @@ class MultiImageTableViewCell: UITableViewCell {
      }
      */
     
+    // userMessageLabel.textAlignment = NSTextAlignment.center
+    
     func setPassportImage(url: String) {
         
         let url = NSURL(string: url)
