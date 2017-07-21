@@ -54,6 +54,9 @@ extension MultiImageViewController: UITableViewDataSource {
         cell.setUseCountLabel(useCount: "1")
         cell.setLimitDateLabel(limitDate: "7/31")
         
+        // セルの角を丸くする
+        cell.layer.cornerRadius = 30.0
+        cell.layer.masksToBounds = true
         
         return cell
     }
