@@ -20,63 +20,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-RR-w5r">
-                                <rect key="frame" x="0.0" y="46" width="414" height="690"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pyA-RR-w5r">
+                                <rect key="frame" x="0.0" y="64" width="414" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LINECell" id="JMD-VA-F6F">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LINECell" rowHeight="82" id="JMD-VA-F6F" customClass="LikeLINETableViewCell" customModule="new" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JMD-VA-F6F" id="ehT-Xv-w4v">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnG-31-nEt">
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="82"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.40462923550000002" green="1" blue="0.42311561250000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.62206881473096232" green="1" blue="0.46572339869059021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userMessageTextView" destination="VnG-31-nEt" id="kdw-Z1-7jj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Zt-aH-3Eh" id="C3T-hH-YKG"/>
+                                    <outlet property="delegate" destination="1Zt-aH-3Eh" id="lIz-pr-7uT"/>
+                                </connections>
                             </tableView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUD-iO-Re9">
-                                <rect key="frame" x="0.0" y="46" width="414" height="692"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" restorationIdentifier="TextTransmitView" translatesAutoresizingMaskIntoConstraints="NO" id="7XV-y2-z8D">
+                                <rect key="frame" x="0.0" y="673" width="414" height="63"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TextTransmitView" translatesAutoresizingMaskIntoConstraints="NO" id="7XV-y2-z8D">
-                                        <rect key="frame" x="0.0" y="629" width="414" height="63"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUu-ij-X9i">
+                                        <rect key="frame" x="289" y="16" width="78" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUu-ij-X9i">
-                                                <rect key="frame" x="289" y="16" width="78" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="送信"/>
-                                                <connections>
-                                                    <action selector="didTapTransmitMessage:" destination="1Zt-aH-3Eh" eventType="touchUpInside" id="Bk1-s6-nTf"/>
-                                                </connections>
-                                            </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjf-p8-XOY">
-                                                <rect key="frame" x="8" y="16" width="273" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tMe-oF-iJz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="621"/>
+                                        <state key="normal" title="送信"/>
+                                        <connections>
+                                            <action selector="didTapTransmitMessage:" destination="1Zt-aH-3Eh" eventType="touchUpInside" id="Bk1-s6-nTf"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vy5-Hx-VvW">
+                                        <rect key="frame" x="20" y="12" width="240" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="1Zt-aH-3Eh" id="4Ut-e3-gyb"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
-                            </scrollView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="r98-ti-bM1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cBv-4q-Cfj" firstAttribute="top" secondItem="7XV-y2-z8D" secondAttribute="bottom" id="8P5-a4-uRf"/>
+                            <constraint firstAttribute="trailing" secondItem="7XV-y2-z8D" secondAttribute="trailing" id="C01-Gk-rrg"/>
+                            <constraint firstAttribute="trailing" secondItem="pyA-RR-w5r" secondAttribute="trailing" id="GKS-mO-HZG"/>
+                            <constraint firstItem="7XV-y2-z8D" firstAttribute="leading" secondItem="tob-XA-y4e" secondAttribute="leading" id="KLf-Cq-Mbn"/>
+                            <constraint firstItem="pyA-RR-w5r" firstAttribute="top" secondItem="6JK-5n-ocu" secondAttribute="bottom" id="T2I-bF-NXj"/>
+                            <constraint firstItem="7XV-y2-z8D" firstAttribute="top" secondItem="pyA-RR-w5r" secondAttribute="bottom" constant="8" id="c6g-Bw-p6A"/>
+                            <constraint firstItem="pyA-RR-w5r" firstAttribute="leading" secondItem="tob-XA-y4e" secondAttribute="leading" id="ub7-nh-ZOY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X9t-HK-0sM"/>
                     <connections>
-                        <outlet property="coverView" destination="tMe-oF-iJz" id="wDc-Cj-oTU"/>
                         <outlet property="lineTableView" destination="pyA-RR-w5r" id="ZyW-ao-20j"/>
-                        <outlet property="scrollView" destination="JUD-iO-Re9" id="b7r-EH-DdK"/>
-                        <outlet property="textField" destination="pjf-p8-XOY" id="e19-ar-Oyi"/>
+                        <outlet property="messageBarBottom" destination="8P5-a4-uRf" id="gk2-53-8rm"/>
+                        <outlet property="textView" destination="Vy5-Hx-VvW" id="Z2G-yq-iMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnH-Gy-6p2" userLabel="First Responder" sceneMemberID="firstResponder"/>

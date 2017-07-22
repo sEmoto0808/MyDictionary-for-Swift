@@ -1,0 +1,8 @@
+実装メモ
+
+【keyboardを表示させる時】
+1.タップするとkeyboardを表示させるViewのbottomのConstraintsをViewControllerの大元のViewから0に設定する。
+2.keyboardが表示されたらkeyboardの高さを取得し，1.で0に設定したbottomのConstraintsの値をkeyboardの高さに設定する。
+
+【keyboardを閉じる時】
+1.【keyboardを表示させる時】の2.でkeyboardの高さに設定したbottomのConstraintsの値を0に設定する。
