@@ -1,0 +1,30 @@
+日付と結びついたデータを日付ごとにセクションにまとめてTableViewで表示する。
+
+dateCheckArray = removeSameDate(dateLists: dateLists)
+        
+let int = messageLists.count
+let array = Array(repeating: "", count: 3)
+dataSet = Array(repeating: array, count: int)
+        
+for i in 0..<int {
+            dataSet[i][0].append(messageLists[i])
+            dataSet[i][1] = dateLists[i]
+            dataSet[i][2] = timeLists[i]
+}
+        
+var countData = [[String]]()
+cellNums.removeAll()
+sectionItems.removeAll()
+for i in 0..<dateCheckArray.count {
+    let text = dateCheckArray[i]
+            
+    for data in dataSet {
+            
+        if data[1].contains(text) {
+            countData.append(data)
+        }
+    }
+    cellNums.append(countData.count)
+    sectionItems.append(countData)
+    countData.removeAll()
+}
