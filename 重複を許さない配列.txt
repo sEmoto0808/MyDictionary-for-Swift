@@ -1,0 +1,9 @@
+重複を許さない配列
+
+func removeSameDate(dateLists: Array<String>) -> Array<String> {
+        
+        let orderedSet = NSOrderedSet(array: dateLists)
+        let uniqueDates = orderedSet.array as! [String]
+        
+        return uniqueDates
+}
