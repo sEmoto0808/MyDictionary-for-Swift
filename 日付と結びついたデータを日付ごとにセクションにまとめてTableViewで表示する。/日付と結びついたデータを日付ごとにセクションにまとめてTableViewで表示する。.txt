@@ -7,7 +7,7 @@ let array = Array(repeating: "", count: 3)
 dataSet = Array(repeating: array, count: int)
         
 for i in 0..<int {
-            dataSet[i][0].append(messageLists[i])
+            dataSet[i][0] = messageLists[i]
             dataSet[i][1] = dateLists[i]
             dataSet[i][2] = timeLists[i]
 }
