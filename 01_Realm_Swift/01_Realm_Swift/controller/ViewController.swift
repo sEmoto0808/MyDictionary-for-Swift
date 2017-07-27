@@ -17,9 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             if (oldSchemaVersion < 1) {}
     })
     
-    let realm = try! Realm()
+    var realm:Realm?
     
-    let person = Person()
+    var person = Person()
     
     @IBOutlet weak var userName: UITextField!
 
@@ -30,7 +30,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         
         self.userName.delegate = self
         self.userContents.delegate = self
+        
         Realm.Configuration.defaultConfiguration = config
+        realm = try! Realm()
         
         /*
         // 生成後に初期化
@@ -74,45 +76,68 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
     @IBAction func saveToDB(_ sender: Any) {
         
-        let personName: String = self.userName.text!
+//        let personName: String = self.userName.text!
+//        
+//        let person = Person(value: ["name": personName,
+//                                    "age": 24])
+        let personAge = Int.random(range: 10..<20)
+        let catAge = Int.random(range: 0..<4)
         
-        let person = Person(value: ["name": personName,
-                                    "age": 24])
         
-        try! realm.write {
-            realm.add(person)
+        person = Person(value: ["name": "Yu",
+                                    "age": personAge])
+//        try! realm?.write {
+//            realm?.add(person)
+//        }
+        
+        let cat = Cat(value: ["name": "ToTo",
+                              "age": catAge])
+        
+        try! realm?.write {
+            person.cats.append(cat)
+            
         }
         
+        print("person.cats: \(person.cats)")
     }
     
     @IBAction func checkResult(_ sender: Any) {
-        let result = realm.objects(Person.self)
+        let result = realm?.objects(Person.self)
         
-        print("Result: \(result.count)人\n")
-        print("Result: \(result)\n")
+        print("Result: \(String(describing: result?.count))人\n")
+        print("Result: \(String(describing: result))\n")
         
     }
     
     @IBAction func update(_ sender: Any) {
         
-        let result = realm.objects(Person.self)
-        
-        let int: Int = 1
-        
-        try! realm.write {
-            result[int]["name"] = "Jiro"
-            //realm.add(person)
-            
-        }
+//        let result = realm?.objects(Person.self)
+//        
+//        let int: Int = 1
+//        
+//        try! realm?.write {
+//            result?[int]["name"] = "Jiro"
+//            //realm.add(person)
+//            
+//        }
+//        let cat = Cat(value: ["name": "ToTo",
+//                              "age": 11])
+//        
+//        try! realm?.write {
+//            person.cats.append(cat)
+//            
+//        }
+//        
+//        print("person.cats: \(person.cats)")
     }
     
     
     @IBAction func deleteData(_ sender: Any) {
         
-        let result = realm.objects(Person.self)
+        let result = realm?.objects(Person.self)
         
-        try! realm.write {
-            realm.delete(result[0])
+        try! realm?.write {
+            realm?.delete((result?[0])!)
         }
     }
     override func didReceiveMemoryWarning() {

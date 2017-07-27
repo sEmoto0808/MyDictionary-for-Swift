@@ -13,12 +13,12 @@ import RealmSwift
 class Person: Object {
     dynamic var name = ""
     dynamic var age = 0
-    //dynamic var mood = "Normal"
-    //dynamic var dog: Dog?  //Dogモデルとの1対1の関連
-    //let cats = List<Cat>()  //Catモデルとの1対多の関連
+    dynamic var mood = "Normal"
+    dynamic var dog: Dog?  //Dogモデルとの1対1の関連
+    let cats = List<Cat>()  //Catモデルとの1対多の関連
     
 }
-/*
+
 class Animal: Object {
     dynamic var name = ""
     dynamic var age = 0
@@ -45,4 +45,3 @@ class UniqueObject: Object {
     }
     
 }
- */
