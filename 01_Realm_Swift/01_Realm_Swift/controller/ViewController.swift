@@ -86,9 +86,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         
         person = Person(value: ["name": "Yu",
                                     "age": personAge])
-//        try! realm?.write {
-//            realm?.add(person)
-//        }
+        try! realm?.write {
+            realm?.add(person)
+        }
         
         let cat = Cat(value: ["name": "ToTo",
                               "age": catAge])
