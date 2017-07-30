@@ -42,9 +42,14 @@ final class RealmDaoBase <T : RealmSwift.Object> {
         return findAll().last
     }
     
-    // 指定したPrimaryKeyのレコードを取得
+    // 指定したPrimaryKeyを持つレコードのみを取得
     func findByKey(key: AnyObject) -> T? {
         return realm.object(ofType: T.self, forPrimaryKey: key)
+    }
+    
+    // 条件に合うPrimaryKeyを持つレコードを全件取得
+    func findAll(key: AnyObject, value: AnyObject) -> Results<T> {
+        return realm.objects(T.self).filter("\(key) == \(value)")
     }
     
 /// MARK: - レコード追加
