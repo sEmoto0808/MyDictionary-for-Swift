@@ -19,5 +19,11 @@ class GrMap: NSObject {
         let mapArray = array.map { $0 * 5 }
         print("mapArray: \(mapArray)\n")
     }
+    
+    func changeString(array: Array<Int>) {
+        
+        let mapArrayStr = array.map { [String($0)] }
+        print("mapArrayStr: \(mapArrayStr)\n")
+    }
 
 }

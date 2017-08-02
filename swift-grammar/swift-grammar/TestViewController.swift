@@ -28,6 +28,7 @@ class TestViewController: UIViewController {
         setup()
         
         map.baseIntMap(array: intArray)
+        map.changeString(array: intArray)
         
         filter.baseIntFilter(array: intArray)
         filter.baseStringFilter(array: stringArray)
