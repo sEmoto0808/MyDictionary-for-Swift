@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0E9F315DC75BB890E1BABB6F /* Pods_flickr_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A7F9BE0F9B360E8F126E4E /* Pods_flickr_demo.framework */; };
 		7F329937CECD1ABD42642989 /* Pods_flickr_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F09B0E0148A421E741DFC1D /* Pods_flickr_demoUITests.framework */; };
+		BB31BB831F3E4EB700FE5137 /* RealmDaoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31BB821F3E4EB700FE5137 /* RealmDaoBase.swift */; };
+		BB31BB861F3E4F3200FE5137 /* SearchedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31BB851F3E4F3200FE5137 /* SearchedPhoto.swift */; };
+		BB31BB881F3E4F4500FE5137 /* SearchedPhotoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31BB871F3E4F4500FE5137 /* SearchedPhotoDao.swift */; };
 		BBB295611F3B659000E41501 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB2955E1F3B659000E41501 /* APIClient.swift */; };
 		BBB295621F3B659000E41501 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB2955F1F3B659000E41501 /* APIRouter.swift */; };
 		BBB295631F3B659000E41501 /* NetworkChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB295601F3B659000E41501 /* NetworkChecker.swift */; };
@@ -55,6 +58,9 @@
 		96A7F9BE0F9B360E8F126E4E /* Pods_flickr_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flickr_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		985C8163520D4AEB53B1DA98 /* Pods-flickr-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flickr-demo/Pods-flickr-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		ADE591EA54CA9450720D617C /* Pods-flickr-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flickr-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-flickr-demo/Pods-flickr-demo.release.xcconfig"; sourceTree = "<group>"; };
+		BB31BB821F3E4EB700FE5137 /* RealmDaoBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDaoBase.swift; sourceTree = "<group>"; };
+		BB31BB851F3E4F3200FE5137 /* SearchedPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedPhoto.swift; sourceTree = "<group>"; };
+		BB31BB871F3E4F4500FE5137 /* SearchedPhotoDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedPhotoDao.swift; sourceTree = "<group>"; };
 		BBB2955E1F3B659000E41501 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BBB2955F1F3B659000E41501 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		BBB295601F3B659000E41501 /* NetworkChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkChecker.swift; sourceTree = "<group>"; };
@@ -126,6 +132,16 @@
 		BB31BB811F3E4D9500FE5137 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				BB31BB821F3E4EB700FE5137 /* RealmDaoBase.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		BB31BB841F3E4EEC00FE5137 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				BB31BB851F3E4F3200FE5137 /* SearchedPhoto.swift */,
+				BB31BB871F3E4F4500FE5137 /* SearchedPhotoDao.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -142,6 +158,7 @@
 		BB570B9D1F3B652A006DFA0D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BB31BB841F3E4EEC00FE5137 /* Realm */,
 				BBB295641F3B661000E41501 /* API */,
 			);
 			path = model;
@@ -541,9 +558,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB31BB861F3E4F3200FE5137 /* SearchedPhoto.swift in Sources */,
 				BBB2957A1F3B78F500E41501 /* Photo.swift in Sources */,
 				BBB2956F1F3B705B00E41501 /* PhotoSearchLoadbale.swift in Sources */,
 				BBB295661F3B666400E41501 /* PhotoSearchParamsBuilder.swift in Sources */,
+				BB31BB831F3E4EB700FE5137 /* RealmDaoBase.swift in Sources */,
 				BBB2956B1F3B6D1800E41501 /* PhotoSearchResult.swift in Sources */,
 				BBB9817F1F3B6473007FC47A /* ViewController.swift in Sources */,
 				BBB295711F3B709C00E41501 /* FlickrAPI.swift in Sources */,
@@ -552,6 +571,7 @@
 				BBB295731F3B720400E41501 /* PhotoURLBuilder.swift in Sources */,
 				BBB9817D1F3B6473007FC47A /* AppDelegate.swift in Sources */,
 				BBB295781F3B757A00E41501 /* PhotoListStatus.swift in Sources */,
+				BB31BB881F3E4F4500FE5137 /* SearchedPhotoDao.swift in Sources */,
 				BBB295761F3B72A200E41501 /* FlickrBaseParamsBuilder.swift in Sources */,
 				BBB295611F3B659000E41501 /* APIClient.swift in Sources */,
 				BBB295681F3B685000E41501 /* Photos.swift in Sources */,
