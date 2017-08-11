@@ -146,6 +146,17 @@
 			name = Realm;
 			sourceTree = "<group>";
 		};
+		BB31BB891F3E5F2600FE5137 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				BBB9817C1F3B6473007FC47A /* AppDelegate.swift */,
+				BBB981831F3B6473007FC47A /* Assets.xcassets */,
+				BBB981881F3B6473007FC47A /* Info.plist */,
+				BBB981851F3B6473007FC47A /* LaunchScreen.storyboard */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		BB570B9C1F3B650F006DFA0D /* helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,10 +244,7 @@
 			children = (
 				BB570B9C1F3B650F006DFA0D /* helper */,
 				BB570B9D1F3B652A006DFA0D /* model */,
-				BBB9817C1F3B6473007FC47A /* AppDelegate.swift */,
-				BBB981831F3B6473007FC47A /* Assets.xcassets */,
-				BBB981881F3B6473007FC47A /* Info.plist */,
-				BBB981851F3B6473007FC47A /* LaunchScreen.storyboard */,
+				BB31BB891F3E5F2600FE5137 /* other */,
 				BBB981801F3B6473007FC47A /* Main.storyboard */,
 				BBB9817E1F3B6473007FC47A /* ViewController.swift */,
 			);
