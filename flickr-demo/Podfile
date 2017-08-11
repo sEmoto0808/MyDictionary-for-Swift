@@ -8,6 +8,7 @@ target 'flickr-demo' do
   # Pods for flickr-demo
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod ‘RealmSwift’
 
   target 'flickr-demoTests' do
     inherit! :search_paths
