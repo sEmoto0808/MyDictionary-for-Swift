@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,44 +44,18 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STV-Extensions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>324A44920D0DFAD377D55A624510A268</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7A0CE6C15AB03A649456CB4C28C9DB33</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>80E3BE4B0942E6244C6D0114303DBB0A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9CA191CD76F64B92119E0F4D4611225F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AD411BD3F7C2FFBB2D0BB80C223BA4AE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F29939A6E87BC1066775F4F48553A397</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

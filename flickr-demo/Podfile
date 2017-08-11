@@ -9,6 +9,9 @@ target 'flickr-demo' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod ‘RealmSwift’
+  pod 'Kingfisher'
+  pod 'SVProgressHUD'
+  pod 'STV-Extensions'
 
   target 'flickr-demoTests' do
     inherit! :search_paths
