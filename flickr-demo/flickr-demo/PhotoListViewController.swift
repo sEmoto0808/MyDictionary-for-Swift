@@ -14,9 +14,13 @@ class PhotoListViewController: UIViewController {
     @IBOutlet weak var ListStatusTabBar: UITabBar!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
+    fileprivate let dataSource = PhotoListProvider()
+    fileprivate let culumNum: CGFloat = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
         // Do any additional setup after loading the view.
     }
 
@@ -36,4 +40,24 @@ class PhotoListViewController: UIViewController {
     }
     */
 
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
+    
+    // セルの大きさ
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellSize:CGFloat = collectionView.frame.size.width/culumNum-2
+        
+        return CGSize(width: cellSize, height: cellSize)
+    }
+}
+
+// file provate
+extension PhotoListViewController {
+    
+    func setup() {
+        photoCollectionView.dataSource = dataSource
+    }
 }

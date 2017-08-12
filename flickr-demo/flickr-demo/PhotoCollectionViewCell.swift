@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        //self.size.width = (superview?.size.width)! / 2
+    }
     
     // セルを再利用する時にnilにする
     override func prepareForReuse() {
@@ -19,17 +26,13 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     // 写真をセルにセットする
-    func setImageFromURL(url: String) {
+    func setImageFromURL(urlString: String) {
         
-        guard let url = URL(string: url) else {
+        guard let url = URL(string: urlString) else {
             return
         }
-        guard let imageData = try? Data(contentsOf: url) else {
-            return
-        }
-        
-        let image = UIImage(data: imageData)
-        self.photoImageView.image = image
+
+        photoImageView.kf.setImage(with: url)
     }
     
 }
