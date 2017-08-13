@@ -11,7 +11,7 @@ import STV_Extensions
 
 class PhotoListProvider: NSObject {
     
-    let photoItems = [String]()
+    var photoItems = [String]()
     
 
 }

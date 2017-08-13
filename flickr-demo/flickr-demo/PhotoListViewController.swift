@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import STV_Extensions
+import SVProgressHUD
 
 class PhotoListViewController: UIViewController {
 
@@ -21,25 +23,34 @@ class PhotoListViewController: UIViewController {
         super.viewDidLoad()
 
         setup()
-        // Do any additional setup after loading the view.
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+// MARK: - PhotoSearchLoadable
+extension PhotoListViewController: PhotoSearchLoadable {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setStatus(status: PhotoListStatus) {
+        
+        SVProgressHUD.dismiss()
+        
+        switch status {
+        case .normal(let result):
+            
+            print("\(result)")
+            //photoCollectionView.reloadData()
+            
+        default:
+            
+            print("falure")
+        }
     }
-    */
+}
 
+// MARK: - UISearchBarDelegate
+extension PhotoListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

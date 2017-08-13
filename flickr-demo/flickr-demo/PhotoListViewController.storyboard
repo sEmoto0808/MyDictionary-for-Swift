@@ -24,6 +24,9 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Twl-RQ-TpS">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CM7-YD-wZt" id="BNl-pz-No8"/>
+                                </connections>
                             </searchBar>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-PH-qVa">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
