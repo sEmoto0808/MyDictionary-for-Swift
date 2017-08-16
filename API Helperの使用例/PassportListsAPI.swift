@@ -41,7 +41,7 @@ final class PassportListsAPI: NSObject {
         let parameters = PassportListsParamsBuilder.create(passportName: passportName)
         let router = Router.passportLists(parameters: parameters, needsSessionToken: true)
         
-        APIClient.request(router: router) { [weak self] (response) in
+        APIClient().request(router: router) { [weak self] (response) in
             
             switch response {
             case .success(let result):

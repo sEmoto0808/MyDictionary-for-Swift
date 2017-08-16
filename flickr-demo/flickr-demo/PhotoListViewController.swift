@@ -12,12 +12,17 @@ import SVProgressHUD
 
 class PhotoListViewController: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var photoSearchBar: UISearchBar!
     @IBOutlet weak var ListStatusTabBar: UITabBar!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
+    fileprivate let photosearchAPI = PhotoSearchAPI()
     fileprivate let dataSource = PhotoListProvider()
+    
+    // MARK: - Layout
     fileprivate let culumNum: CGFloat = 2
+    fileprivate let margin: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +34,20 @@ class PhotoListViewController: UIViewController {
 // MARK: - PhotoSearchLoadable
 extension PhotoListViewController: PhotoSearchLoadable {
     
-    func setStatus(status: PhotoListStatus) {
+    func setResult(result: PhotoSearchStatus) {
         
         SVProgressHUD.dismiss()
         
-        switch status {
-        case .normal(let result):
-            
-            print("\(result)")
+        switch result {
+        case .loaded(let response):
+            print("\(response)")
             //photoCollectionView.reloadData()
+            //let url = PhotoURLBuilder.create(photo: response.photos)
+            
+        case .error(message: let message):
+            print("\(message)")
             
         default:
-            
             print("falure")
         }
     }
@@ -50,6 +57,13 @@ extension PhotoListViewController: PhotoSearchLoadable {
 extension PhotoListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchText = photoSearchBar.text else {
+            return
+        }
+        SVProgressHUD.show()
+        photosearchAPI.loadable = self
+        photosearchAPI.load(tags: searchText)
     }
 }
 
@@ -59,7 +73,7 @@ extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
     // セルの大きさ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellSize:CGFloat = collectionView.frame.size.width/culumNum-2
+        let cellSize:CGFloat = collectionView.frame.size.width/culumNum-margin
         
         return CGSize(width: cellSize, height: cellSize)
     }

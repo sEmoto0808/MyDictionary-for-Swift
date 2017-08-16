@@ -15,7 +15,7 @@ enum APIRouter: URLRequestConvertible {
     
     // API pattern
     // APIによって可変
-    case PhotosSearch([String: Any])
+    case PhotosSearch(parameters: [String: Any])
     
     // URL request
     // - Return: URLリクエスト

@@ -12,11 +12,11 @@ final class PhotoSearchParamsBuilder {
     
     static let perPage = 50
     
-    static func create(tags: String, page: Int) -> [String: Any] {
+    static func create(tags: String) -> [String: Any] {
         
         var params = [String: Any]()
         
-        params["page"] = "\(page)"
+        //params["page"] = "\(page)"
         params["per_page"] = "\(perPage)"
         params["tags"] = "\(tags)"
         

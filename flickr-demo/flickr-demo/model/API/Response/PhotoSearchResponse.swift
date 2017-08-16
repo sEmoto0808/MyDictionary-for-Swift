@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-final class PhotoSearchResult: Mappable {
+final class PhotoSearchResponse: Mappable {
     
     var stat = ""
     var photos = [Photos]()
