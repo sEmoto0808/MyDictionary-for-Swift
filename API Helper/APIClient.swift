@@ -22,7 +22,7 @@ final class APIClient {
     // APIをコールする
     //
     // - Return: APIの処理結果
-    func request(router: APIRouter,
+    static func request(router: APIRouter,
                  completionHandler: @escaping (Result) -> Void = {_ in
         }) {
         
