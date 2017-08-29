@@ -1,0 +1,6 @@
+framework module Pods_ios_facebook_practiceTests {
+  umbrella header "Pods-ios-facebook-practiceTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
