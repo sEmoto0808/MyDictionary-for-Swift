@@ -14,61 +14,49 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(String(describing: Bundle.main.bundleIdentifier))")
+        
+        print("\(String(describing: Bundle.main.bundleIdentifier))\n\n")
+        
+        let login:Bool = FBLoginChecker().isLoggedInWithFacebook()
+        print(login)
+        print("\n\n")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
 }
 
 extension ViewController {
     
-    // MARK: - Facebook Login
-    func isLoggedInWithFacebook() -> Bool {
-        let loggedIn = AccessToken.current != nil
-        return loggedIn
-    }
-    
-    // MARK: - Facebook Get UserInfo
-    func getUserInfo (){
-        
-        GraphRequest(graphPath: "me", parameters: ["fields": "name, email"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: GraphAPIVersion.defaultVersion).start({
-            response, result in
-            switch result {
-            case .success(let response) :
-                print("response:\(response)")
-                break
-            case .failed(let error):
-                print("error:\(error.localizedDescription)")
-                
-            }
-            
-        })
-    }
+//    // MARK: - Facebook Login
+//    func isLoggedInWithFacebook() -> Bool {
+//        let loggedIn = AccessToken.current != nil
+//        return loggedIn
+//    }
+//    
+//    // MARK: - Facebook Get UserInfo
+//    func getUserInfo (){
+//        
+//        GraphRequest(graphPath: "me", parameters: ["fields": "name, email"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: GraphAPIVersion.defaultVersion).start({
+//            response, result in
+//            switch result {
+//            case .success(let response) :
+//                print("response:\(response)")
+//                break
+//            case .failed(let error):
+//                print("error:\(error.localizedDescription)")
+//                
+//            }
+//            
+//        })
+//    }
     
     // MARK: - @IBAction
     @IBAction func didTapLogin(_ sender: Any) {
         
-        LoginManager().logIn([.email], viewController: self, completion: {
-            result in
-            switch result {
-            case let .success( permission, declinePemisson, token):
-                print("token:\(token),\(permission),\(declinePemisson)")
-            case let .failed(error):
-                print("error:\(error)")
-            case .cancelled:
-                print("cancelled")
-            }
-            
-        })
+        FBAPI().login(vc: self)
+        FBAPI().getUserInfo()
     }
     
     @IBAction func didTapLogout(_ sender: Any) {
         
-        LoginManager().logOut()
+        FBAPI().logout()
     }
 }

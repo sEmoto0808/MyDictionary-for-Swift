@@ -384,12 +384,12 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
+				<string>8DEF6EAB80C3B99411699B8F</string>
+				<string>7CBDFCC60D4106864175DD3B</string>
+				<string>BB4EBC5B1F55A72500C27573</string>
 				<string>BB4EBC5C1F55A72500C27573</string>
 				<string>BB4EBC711F55A72500C27573</string>
 				<string>BB4EBC7C1F55A72500C27573</string>
-				<string>BB4EBC5B1F55A72500C27573</string>
-				<string>7CBDFCC60D4106864175DD3B</string>
-				<string>8DEF6EAB80C3B99411699B8F</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -494,7 +494,9 @@ fi
 			<key>files</key>
 			<array>
 				<string>BB4EBC601F55A72500C27573</string>
+				<string>BB9F60EE1F5705810099A3B0</string>
 				<string>BB4EBC5E1F55A72500C27573</string>
+				<string>BB9F60EC1F5702120099A3B0</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -589,12 +591,13 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
+				<string>BB9F60E91F5701BB0099A3B0</string>
 				<string>BB4EBC5D1F55A72500C27573</string>
-				<string>BB4EBC5F1F55A72500C27573</string>
-				<string>BB4EBC611F55A72500C27573</string>
 				<string>BB4EBC641F55A72500C27573</string>
-				<string>BB4EBC661F55A72500C27573</string>
 				<string>BB4EBC691F55A72500C27573</string>
+				<string>BB4EBC661F55A72500C27573</string>
+				<string>BB4EBC611F55A72500C27573</string>
+				<string>BB4EBC5F1F55A72500C27573</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -649,6 +652,8 @@ fi
 			<string>PBXVariantGroup</string>
 			<key>name</key>
 			<string>Main.storyboard</string>
+			<key>path</key>
+			<string>.</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -700,6 +705,8 @@ fi
 			<string>PBXVariantGroup</string>
 			<key>name</key>
 			<string>LaunchScreen.storyboard</string>
+			<key>path</key>
+			<string>.</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -840,8 +847,8 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>BB4EBC721F55A72500C27573</string>
 				<string>BB4EBC741F55A72500C27573</string>
+				<string>BB4EBC721F55A72500C27573</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -985,8 +992,8 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>BB4EBC7D1F55A72500C27573</string>
 				<string>BB4EBC7F1F55A72500C27573</string>
+				<string>BB4EBC7D1F55A72500C27573</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1212,6 +1219,8 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -1276,6 +1285,8 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -1348,6 +1359,8 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -1406,6 +1419,77 @@ fi
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Release</string>
+		</dict>
+		<key>BB9F60E91F5701BB0099A3B0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BB9F60EA1F5701CA0099A3B0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>model</string>
+			<key>path</key>
+			<string>model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BB9F60EA1F5701CA0099A3B0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BB9F60ED1F5705810099A3B0</string>
+				<string>BB9F60EB1F5702120099A3B0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Facebook API</string>
+			<key>path</key>
+			<string>Facebook API</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BB9F60EB1F5702120099A3B0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FBLoginChecker.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BB9F60EC1F5702120099A3B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BB9F60EB1F5702120099A3B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BB9F60ED1F5705810099A3B0</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FBAPI.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BB9F60EE1F5705810099A3B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BB9F60ED1F5705810099A3B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>C1402C843051DF868F5A2033</key>
 		<dict>
