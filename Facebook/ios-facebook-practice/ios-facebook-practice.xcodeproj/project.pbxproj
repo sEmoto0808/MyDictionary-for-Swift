@@ -494,6 +494,7 @@ fi
 			<key>files</key>
 			<array>
 				<string>BB4EBC601F55A72500C27573</string>
+				<string>BBC7D7041F58649000D6200B</string>
 				<string>BB9F60EE1F5705810099A3B0</string>
 				<string>BB4EBC5E1F55A72500C27573</string>
 				<string>BB9F60EC1F5702120099A3B0</string>
@@ -1428,8 +1429,6 @@ fi
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>model</string>
 			<key>path</key>
 			<string>model</string>
 			<key>sourceTree</key>
@@ -1441,11 +1440,10 @@ fi
 			<array>
 				<string>BB9F60ED1F5705810099A3B0</string>
 				<string>BB9F60EB1F5702120099A3B0</string>
+				<string>BBC7D7031F58649000D6200B</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Facebook API</string>
 			<key>path</key>
 			<string>Facebook API</string>
 			<key>sourceTree</key>
@@ -1488,6 +1486,26 @@ fi
 		<dict>
 			<key>fileRef</key>
 			<string>BB9F60ED1F5705810099A3B0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BBC7D7031F58649000D6200B</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FBUser.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BBC7D7041F58649000D6200B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BBC7D7031F58649000D6200B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

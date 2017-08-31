@@ -9,8 +9,21 @@
 import Foundation
 import FacebookCore
 import FacebookLogin
+import ObjectMapper
+
+enum FBStatus {
+    case success(FBUser)
+    case offline
+    case error(message: String)
+}
+
+protocol FBLoadable: class {
+    func setResult(result: FBStatus)
+}
 
 final class FBAPI {
+    
+    weak var loadable: FBLoadable?
     
     // MARK: - Facebook Login
     func login(vc: UIViewController) {
@@ -42,6 +55,9 @@ final class FBAPI {
             switch result {
             case .success(let response) :
                 print("response:\(response)")
+                if let result = Mapper<FBUser>().map(JSONObject: result) {
+                    self.loadable?.setResult(result: .success(result))
+                }
                 break
             case .failed(let error):
                 print("error:\(error.localizedDescription)")

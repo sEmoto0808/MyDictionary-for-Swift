@@ -8,6 +8,7 @@ target 'ios-facebook-practice' do
   # Pods for ios-facebook-practice
   pod 'FacebookCore'  
   pod 'FacebookLogin'
+  pod ‘ObjectMapper’
 
   target 'ios-facebook-practiceTests' do
     inherit! :search_paths
