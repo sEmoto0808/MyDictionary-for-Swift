@@ -1,0 +1,5 @@
+URLのベースとなるテキストに日本語が含まれる可能性がある場合
+
+let url = URL(string: text.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)
+
+を使うこと！
